@@ -14,7 +14,7 @@ async def start(message: Message):
     await message.answer("Привет! Бот работает через вебхук.")
 
 app = web.Application()
-SimpleRequestHandler(dispatcher=dp, bot=bot, path="/bot").register(app)
+SimpleRequestHandler(dispatcher=dp, bot=bot, path="/bot").register(app, path="/bot")
 setup_application(app, dp, bot=bot)
 
 if __name__ == "__main__":
