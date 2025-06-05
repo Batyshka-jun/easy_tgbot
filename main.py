@@ -16,9 +16,13 @@ dp = Dispatcher()
 async def start(message: Message):
     await message.answer("Привет! Я работаю через вебхук!")
 
-@dp.message(Command("help")
+@dp.message(Command("help"))
 async def help(message: Message):
     await message.answer("Задайте свой вопрос")
+
+@dp.message(Command("ars"))
+async def ars(message: Message):
+    await message.answer("Здаров арсенал")
 # Создаем веб-приложение
 app = web.Application()
 
