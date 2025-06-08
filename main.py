@@ -11,11 +11,9 @@ BOT_TOKEN = "7093125966:AAHBahHedhuO1yQOGEFzdFJKIthxPaIPVMY"
 bot = Bot(token=BOT_TOKEN)
 dp = Dispatcher()
 
-web_kb = InlineKeyboardMarkup(
+web = InlineKeyboardMarkup(
     inline_keyboard=[
-        [InlineKeyboardButton(text="Открыть сайт",web_app=WebAppInfo(url="https://weather-mapweb.onrender.com/")
-                             )
-        ]
+        [InlineKeyboardButton(text="Открыть сайт",web_app=WebAppInfo(url="https://weather-mapweb.onrender.com/"))]
     ]
 )
 # Пример обработчика команды /start
@@ -25,7 +23,7 @@ async def start(message: Message):
 
 @dp.message(Command("weather"))
 async def help(message: Message):
-    await message.answer("Вот ссылка для открытия сайта с погодой", reply_keyboard=web_kb)
+    await message.answer("Вот ссылка для открытия сайта с погодой", reply_markup=web)
 
 @dp.message(Command("ars"))
 async def ars(message: Message):
