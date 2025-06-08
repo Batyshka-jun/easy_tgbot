@@ -15,7 +15,7 @@ web_app=WebAppInfo(url="https://weather-mapweb.onrender.com/")
 
 web = InlineKeyboardMarkup(
     inline_keyboard=(
-        [InlineKeyboardButton(text="Открыть сайт",web_app=web_app)]
+        [InlineKeyboardButton(text="Открыть сайт",web_app=web_app)],
     )
 )
 # Пример обработчика команды /start
