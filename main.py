@@ -11,10 +11,12 @@ BOT_TOKEN = "7093125966:AAHBahHedhuO1yQOGEFzdFJKIthxPaIPVMY"
 bot = Bot(token=BOT_TOKEN)
 dp = Dispatcher()
 
+web_app=WebAppInfo(url="https://weather-mapweb.onrender.com/")
+
 web = InlineKeyboardMarkup(
-    inline_keyboard=[
-        [InlineKeyboardButton(text="Открыть сайт",web_app=WebAppInfo(url="https://weather-mapweb.onrender.com/"))]
-    ]
+    inline_keyboard=(
+        [InlineKeyboardButton(text="Открыть сайт",web_app=web_app)]
+    )
 )
 # Пример обработчика команды /start
 @dp.message(CommandStart())
